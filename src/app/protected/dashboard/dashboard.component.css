@@ -1,0 +1,57 @@
+.puntero {
+  cursor: pointer;
+}
+
+.img-circle {
+  border-radius: 100%;
+  width: 150px;
+}
+
+.card-title,
+.card-text {
+  color: black;
+  font-size: 20px;
+}
+
+.badge {
+  margin-left: 5px;
+}
+
+.btn-outline-success {
+  margin-left: 5px;
+}
+
+.img-thumb {
+  width: 50px;
+  height: 50px;
+}
+
+._ngcontent-111-c94 {
+   margin: 0px;
+}
+
+.color-white{
+  color: white;
+}
+
+.card-effect{
+  border-color: #00b2ff #00b2ff #00b2ff;
+  -moz-box-shadow: 0 0 10px #00b2ff;
+  box-shadow: 0 0 9px #00b2ff;
+}
+
+.sexy_line.big {
+  background: -webkit-gradient(radial,50% 50%,0,50% 50%,419,from(#9c9c9c),to(#e9eaed));
+  margin-bottom: 10px;
+}
+
+.sexy_line {
+  display: block;
+  border: none;
+  color: #fff;
+  height: 1px;
+  background: #000;
+  background: -webkit-gradient(radial,50% 50%,0,50% 50%,219,from(#9c9c9c),to(#e9eaed));
+}
+
+

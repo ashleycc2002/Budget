@@ -1,0 +1,39 @@
+.card-primary:not(.card-outline)>.card-header {
+    background-color: #536dfe;;
+}
+
+.card-primary:not(.card-outline)>.card-header, .card-primary:not(.card-outline)>.card-header a {
+    color: #fff;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #4990cd;
+    border-radius: .35rem;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.card-details{
+    margin: 0 auto;
+    width: 90%;
+}
+
+.black {
+    color: black;
+    font-weight: bolder;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.gray-Details {
+    font-weight: bolder;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}

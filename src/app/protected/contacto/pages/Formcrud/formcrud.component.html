@@ -1,0 +1,86 @@
+<div class="card shadow">
+    <div class="card-header py-3">
+        <p class="text-primary m-0 font-weight-bold">Listado de Contacto</p>
+    </div>
+    <div class="card-body">
+
+
+        <mat-form-field style="width:100%;">
+            <input autocomplete="none" spellcheck="false" #txtSearch (keyup)="HandleSearch(txtSearch.value)" matInput placeholder="Búsqueda">
+        </mat-form-field>
+
+        <div class="form-group col-md-6">
+            <button class="btn btn-primary" routerLink="/contacto/formcontact/nuevo">
+          <i class="fa fa-plus"></i>
+          Agregar
+      </button>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="table-responsive{-sm|-md|-lg|-xl}   table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                    <table *ngIf="!loading && contactos.length > 0 " class="table my-0 animated fadeIn faster" id="dataTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellidos</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">Pais</th>
+                                <th scope="col">Telefono1</th>
+                                <th scope="col">Acciones</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--<tr *ngFor="let contact of contactos | paginate:page_size:page_number | filtersearch:FiltroValue; let i = index">-->
+                            <tr *ngFor="let contact of contactos; let i = index">
+                                <th scope="row">{{i + 1}}</th>
+
+                                <td>{{contact.nombre}}</td>
+                                <td>{{contact.apellidos}}</td>
+                                <td>{{contact.correo}}</td>
+                                <td>{{contact.pais}}</td>
+                                <td>{{contact.telefono1}}</td>
+
+                                <td>
+                                    <button class="btn btn-info mr-1" [routerLink]="['/contacto/formcontact',contact._id ]">
+                        <i class="fa fa-pen"></i>
+                    </button>
+
+                                    <button class="btn btn-danger" (click)="DeleteContacto( contact, i )">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <mat-paginator [length]="contactos.length" [pageSize]="page_size" [pageSizeOptions]="pageSizeOptions" (page)="handlePage($event)" aria-label="Select page" showFirstLastButtons>
+                </mat-paginator>
+
+            </div>
+            <div class="col-md-12">
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!loading && contactos.length === 0" class="alert alert-warning text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">No hay registros</h4>
+    <p><i class="fa fa-exclamation fa-2x"></i></p>
+</div>

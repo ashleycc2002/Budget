@@ -1,0 +1,72 @@
+<div class="card card-primary">
+
+    <div class="card-header">
+      <h3 class="card-title">Detalle del Contacto</h3>
+    </div>
+    <form>
+      <div class="card-body card-details">
+      <div class="row">   
+        <div class="col">
+         
+            <ul class="list-group">
+                <li class="list-group-item">
+                   <strong class="black">Nombre:</strong>
+                  <strong class= "gray-Details">{{nombre}}</strong>
+                </li>
+
+                <li class="list-group-item">
+                  <strong class="black">Apellidos:</strong>
+                  <strong class= "gray-Details">{{apellidos}}</strong>
+               </li>
+
+               <li class="list-group-item">
+                <strong class="black">Correo:</strong>
+                <strong class= "gray-Details">{{correo}}</strong>
+             </li>
+
+             <li class="list-group-item">
+              <strong class="black">Pais:</strong>
+              <strong class= "gray-Details">{{pais}}</strong>
+           </li>
+
+           <li class="list-group-item">
+            <strong class="black">Fecha de Cumpleaño:</strong>
+            <strong class= "gray-Details">{{fechadecumpleano | date:'shortDate' }}</strong>
+         </li>
+
+         <li class="list-group-item" >
+          <strong class="black">movil:</strong>
+          <strong class= "gray-Details">{{movil}}</strong>
+       </li>
+       <li class="list-group-item">
+        <strong class="black">Dirreccion:</strong>
+        <strong class= "gray-Details">{{direccion}}</strong>
+     </li>
+
+     <li class="list-group-item" >
+      <strong class="black">Telefono:</strong>
+      <strong class= "gray-Details">{{telefono}}</strong>
+     </li>
+     <li class="list-group-item">
+      <strong class="black">Profesión:</strong>
+      <strong class= "gray-Details">{{profesion}}</strong>
+   </li>
+
+   <li class="list-group-item" >
+    <strong class="black">Idioma:</strong>
+    <strong class= "gray-Details">{{idioma}}</strong>
+   </li>
+    </ul>
+        </div>
+    
+      </div>
+      
+    </div> 
+    
+
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary" routerLink="/contacto/contactcard">Retornar card</button>
+      </div>
+    </form>
+  </div>
+  

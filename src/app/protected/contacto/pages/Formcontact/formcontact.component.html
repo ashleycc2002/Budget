@@ -1,0 +1,176 @@
+<div class="row">
+    <div class="col">
+
+        <div class="conta-card shadow mb-3">
+            <div class="card-header py-3">
+                <p class="text-primary m-0 font-weight-bold">Datos de contacto</p>
+            </div>
+            <div class="card-body">
+
+                <form class="login100-form" (ngSubmit)="CrearContacto()" autocomplete="off" [formGroup]="miFormulario">
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Nombre</label>
+                            <input type="text" formControlName="name" placeholder="Ingrese su nombre" class="form-control" minlength="6">
+                            <span class="form-text text-danger" *ngIf="campoNoValido('name')">
+                                {{nameErrorsMsg}}
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Apellidos</label>
+                            <input type="text" formControlName="lastname" placeholder="Ingrese su apellido" class="form-control">
+                            <span class="form-text text-danger" *ngIf="campoNoValido('lastname')">
+                                {{lastnameErrorsMsg}}
+
+                             </span>
+
+
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Correo</label>
+                            <input type="email" formControlName="email" placeholder="Ingrese su correo" class="form-control">
+                            <span class="form-text text-danger" *ngIf="campoNoValido('email')">
+                                {{emialErrorsMsg}}
+                             </span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Pais</label>
+                            <input type="text" formControlName="country" placeholder="Ingrese su pais" class="form-control">
+                            <span class="form-text text-danger" *ngIf="campoNoValido('country')">
+                                {{countryErrorsMsg}}
+                             </span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Fecha de Cumpleaño</label>
+                            <input type="date" formControlName="birthdaydate" placeholder="Ingrese su fecha de cumpleaño" class="form-control">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">movil</label>
+                            <input type="tel" formControlName="phone1" placeholder="Ingrese su movil" class="form-control">
+                            <span class="form-text text-danger" *ngIf="campoNoValido('phone1')">
+                            <span class="form-text text-danger"> {{phone1MinLengthErrorsMsg}}</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Dirreccion</label>
+                            <input type="text" formControlName="address" placeholder="Ingrese su dirreccion" class="form-control">
+                            <span class="form-text text-danger" *ngIf="campoNoValido('address')">
+                                {{addressErrorsMsg}}
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Telefono</label>
+                            <input type="tel" formControlName="phone2" placeholder="Ingrese su telefono" class="form-control">
+                            <span class="form-text text-danger" *ngIf="campoNoValido('phone2')"> </span>
+                            <span class="form-text text-danger"> {{phoneMinLengthErrorsMsg}}</span>
+
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Profesión</label>
+                            <input type="text" formControlName="profesion" placeholder="Ingrese su profesión" class="form-control">
+                            <span class="form-text text-danger" *ngIf="campoNoValido('profesion')">
+                                {{profesionErrorsMsg}}
+                            </span>
+
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Idioma</label>
+                            <input type="text" formControlName="lenguage" placeholder="Ingrese su idioma" class="form-control">
+                            <span class="form-text text-danger" *ngIf="campoNoValido('lenguage')"> </span>
+                            <span class="form-text text-danger"> {{lenguageErrorsMsg}}</span>
+                        </div>
+                    </div>
+
+                    <label for="" class="Title-RedesSociales">Redes Socioles</label>
+                    <div class="switch">
+
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6">
+                                <div class="custom-control custom-switch">
+                                    <input (click)="switchTouchWhtsApp()" onclick="" [hidden]="!visible" type="checkbox" formControlName="whasapp" class="custom-control-input" id="customSwitch1">
+                                    <label class="custom-control-label" for="customSwitch1">WhtsApp</label>
+                                    <input type="text" id="txtwhatsapp" formControlName="txtwhasapp" placeholder="Ingrese su whatsApp" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <div class="custom-control custom-switch">
+                                    <input (click)="switchTouchSnapchat()" [hidden]="!visiblesnapchat" type="checkbox" formControlName="snapchat" class="custom-control-input" id="customSwitch2">
+                                    <label class="custom-control-label" for="customSwitch2">Snachap</label>
+                                    <input type="text" id="txtsnapchat" formControlName="txtsnapchat" placeholder="Ingrese su snapchat" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6">
+                                <div class="custom-control custom-switch">
+                                    <input (click)="switchTouchLinkedin()" [hidden]="!visiblelinkedin" type="checkbox" formControlName="linkedin" class="custom-control-input" id="customSwitch3">
+                                    <label class="custom-control-label" for="customSwitch3">LinkedIn</label>
+                                    <input type="text" id="txtlinkedin" formControlName="txtlinkedin" placeholder="Ingrese su linkedIn" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <div class="custom-control custom-switch">
+                                    <input (click)="switchTouchFacebook()" [hidden]="!visiblefacebook" type="checkbox" formControlName="facebook" class="custom-control-input" id="customSwitch4">
+                                    <label class="custom-control-label" for="customSwitch4">Facebook</label>
+                                    <input type="text" id="txtfacebook" formControlName="txtfacebook" placeholder="Ingrese su facebook" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6">
+                                <div class="custom-control custom-switch">
+                                    <input (click)="switchTouchInstagram()" [hidden]="!visibleinstagram" type="checkbox" formControlName="instagram" class="custom-control-input" id="customSwitch5">
+                                    <label class="custom-control-label" for="customSwitch5">Instagram</label>
+                                    <input type="text" id="txtinstagram" formControlName="txtinstagram" placeholder="Ingrese su instagram" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <div class="custom-control custom-switch">
+                                    <input (click)="switchTouchTwitter()" [hidden]="!visibletwitter" type="checkbox" formControlName="twitter" class="custom-control-input" id="customSwitch6">
+                                    <label class="custom-control-label" for="customSwitch6">Twitter</label>
+                                    <input type="text" id="txttwitter" formControlName="txttwitter" placeholder="Ingrese su twitter" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="container">
+
+                        <button type="button" class="btn btn-primary btn-return" routerLink="/contacto/formcrud">Retornar Lista</button>
+
+                        <button type="submit" class="btn btn-primary btn-save">Guardar</button>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+
+
+#reloj {
+   font: bold 1.5em dotum, "lucida sans", arial;
+   margin: 1em 3em 1em 1em; }
+
+   .hora{
+    color: black;
+    padding-right: 5px;
+   }
+
+  .ampm {
+    color:rebeccapurple;
+  }
+
+ 

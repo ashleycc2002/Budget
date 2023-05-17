@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col">
+
+        <h1 Style="color: #351c75;font-size: 50px;margin-left: 50px;" class="callout-title animate__animated animate__backInLeft">Contactus Schedule</h1>
+        <h2 style="color: #351c75;font-size: 35px;;margin-left: 50px;" class="animate__animated animate__backInRight">Kaizen</h2>
+        <span class="sexy_line big"></span>
+
+        <mat-carousel timings="250ms ease-in" [autoplay]="true" [interval]="5000" color="accent" maxWidth="500" [proportion]="108" slideHeight="50%" [slides]="3" [loop]="true" [hideArrows]="true" [hideIndicators]="true" [useKeyboard]="true" [useMouseWheel]="false"
+            orientation="ltr">
+
+            <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slides; let i = index" overlayColor="#00000000" [hideOverlay]="false">
+                <div class="card-columns m-5 animated fadeIn">
+
+                    <div *ngFor="let slide of slides; let i = index" class="card puntero card-effect">
+                        <img class="card-img-top" style="margin: 0 auto;" [src]="slide.image" alt="Card image cap">
+                        <div class="card-body">
+
+                            <h5 class="card-title" style="font-size: 23px;">
+                                {{slide.name}}
+                            </h5>
+                            <p class="card-text">
+                                <span class="badge badge-pill badge-primary">
+                          <a target="blank" class="color-white" href={{slide.link}}>{{slide.namelink}}</a>
+                        </span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </mat-carousel-slide>
+
+        </mat-carousel>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+  <!-- Default box -->
+  <div class="card card-solid">
+    <div class="card-body pb-0">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column card-img-height" *ngFor="let contact of contactos | paginate:page_size:page_number">
+          <div class="card bg-light d-flex flex-fill">
+            <div class="card-header text-muted border-bottom-0">
+             Informacion del Contacto
+            </div>
+            <div class="card-body pt-0">
+              <div class="row">
+                <div class="col-7">
+                  <h2 class="lead"><b>{{contact.nombre}}</b></h2>
+                  <p class="text-muted text-sm"><b>Profesion: </b> {{contact.profesion}} / correo:{{contact.correo}} </p>
+                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Direccion: {{contact.direccion}}, Pais: {{contact.pais}}</li>
+                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>  Telefono: {{contact.telefono2}}, movil:{{contact.telefono1}}</li>
+                  </ul>
+                </div>
+                <div class="col-5 text-center">
+                  <img src="assets/img/avatars/avatar1.jpeg" alt="user-avatar" class="img-circle img-fluid" style="visibility: hidden">
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="text-right">
+                <a href="#" class="btn btn-sm btn-primary" [routerLink]="['/contacto/contactdetails',contact._id]">
+                  <i class="fas fa-user"></i> Ver Perfil
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+      <mat-paginator [length]="contactos.length"
+      [pageSize]="page_size"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="handlePage($event)"
+      aria-label="Select page" showFirstLastButtons>
+    </mat-paginator>
+
+    </div>
+
+
+  <!-- /.card -->
+    <!-- /.card-footer -->
+
+  </div>
+
+  <div  *ngIf="!loading && contactos.length === 0" class="no-register alert alert-warning text-center mt-3 animated fadeIn faster">
+    <h4 class=" no-register-h4 alert-heading">No hay registros</h4>
+    <p><i class="fa fa-exclamation fa-2x"></i></p>
+</div>
+
+<div *ngIf="loading" class="alert alert-info text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">Cargando</h4>
+    <p><i class="fa fa-sync-alt fa-spin fa-2x"></i></p>
+    <p class="mb-0">Espere por favor</p>
+</div>
+  <!-- /.card -->
